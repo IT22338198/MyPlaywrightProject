@@ -1,0 +1,28 @@
+{
+  "name": "myplaywrightproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:e2e": "npx playwright test tests/",
+    "test:e2e:all": "npx playwright test tests --project=all-browsers-and-tests",
+    "test:e2e:ci": "CI=1 npx playwright test --project=ci --shard=$CI_NODE_INDEX",
+    "test:e2e:dev": "npx playwright test tests-examples/ --project=chromium --headed",
+    "test:e2e:smoke": "npx playwright test tests-examples/ --grep @smoke --project=chromium",
+    "test:e2e:non-smoke": "npx playwright test tests-examples/ --grep-invert @smoke --project=chromium",
+     "test:visual:acme": "npx playwright test example-applitools.spec.ts --project=chromium",
+    "test:visual:playwright": "npx playwright test example3.spec.ts --project=all-browsers-and-tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.1"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "@applitools/eyes-playwright": "^1.33.2",
+    "D": "^1.0.0"
+  }
+}
